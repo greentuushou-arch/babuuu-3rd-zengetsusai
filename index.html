@@ -114,14 +114,40 @@ a:focus-visible{outline:2px solid var(--blue-text);outline-offset:3px}
 .btn{display:block;text-align:center;background:var(--ink);color:#fff;font-size:17px;font-weight:600;line-height:1.5;letter-spacing:.1em;text-decoration:none;padding:.9em 1em;border-radius:999px;margin-top:22px;transition:opacity .2s}
 .btn:hover{opacity:.8}
 
-.dlg{border:0;padding:54px 0 0;background:transparent;width:min(480px,calc(100vw - 24px));max-width:none;max-height:none;overflow:visible;margin:auto}
+.dlg{border:0;padding:54px 0 0;background:transparent;width:min(560px,calc(100vw - 24px));max-width:none;max-height:none;overflow:visible;margin:auto}
 html:has(dialog[open]){overflow:hidden}
 .dlg::backdrop{background:rgba(30,32,35,.72)}
 .dlg-scroll{max-height:calc(100vh - 78px);max-height:calc(100dvh - 78px);overflow-y:auto;overscroll-behavior:contain;background:#fff;border-radius:12px}
-.dlg-scroll img{width:100%}
 .dlg-close{position:absolute;top:0;right:0;z-index:2;width:44px;height:44px;border:0;border-radius:50%;background:#fff;cursor:pointer}
 .dlg-close::before,.dlg-close::after{content:"";position:absolute;left:12px;top:21px;width:20px;height:2px;background:var(--ink);transform:rotate(45deg)}
 .dlg-close::after{transform:rotate(-45deg)}
+
+.dt{color:var(--ink);font-size:15.5px;line-height:1.85;letter-spacing:.04em}
+.dt h3,.dt h4,.dt h5{font-weight:600;margin:0}
+.dt-head{background:var(--pink-deep);color:#fff;text-align:center;padding:26px 14px 22px;line-height:1.7}
+.dt-head .en{font-family:var(--en);font-weight:500;letter-spacing:.16em;color:#FFE285;font-size:14.5px}
+.dt-head h3{font-size:clamp(22px,6.2vw,30px);line-height:1.5;letter-spacing:.02em}
+.dt-hero{display:grid;grid-template-columns:58% 1fr;align-items:center;background:var(--mist)}
+.dt-hero>div{padding:12px 10px;text-align:center}
+.dt-mark{font-weight:600;font-size:16.5px;line-height:1.6}
+.dt-age{margin-top:12px;font-weight:600;font-size:15.5px;line-height:1.5;background:#fff;border-radius:12px;padding:10px 4px}
+.dt-age span{display:block;font-weight:450;font-size:14.5px}
+.dt-sm{font-size:14.5px;line-height:1.7;color:var(--sub);margin-top:8px}
+.dt-sec{padding:26px 16px}
+.dt-sec h4{font-size:18px;line-height:1.6;text-align:center;margin-bottom:14px}
+.dt-sec>img{border-radius:10px;width:100%}
+.dt-sec p{margin-top:12px}
+.dt-mist{background:var(--mist)}
+.dt-five{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
+.dt-five img{width:100%;border-radius:6px}
+.dt-emb{margin-top:6px}
+.dt-emb img{border-radius:6px}
+.dt-cap{text-align:center;font-weight:600}
+.dt-info{background:var(--mist)}
+.dt-info h5{background:var(--ink);color:#fff;font-size:16px;text-align:center;border-radius:999px;padding:.3em 1em;margin:0 auto 12px;max-width:290px}
+.dt-info h5:not(:first-child){margin-top:24px}
+.dt-chars{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 16px;color:var(--pink-text);font-weight:600;font-size:17px}
+.dt-info li{font-size:14.5px;line-height:1.8;color:var(--sub);margin-top:8px}
 
 /* review */
 .rev-lead{font-size:24px;font-weight:600;line-height:1.6;letter-spacing:.08em;margin-bottom:16px}
@@ -493,7 +519,52 @@ html:has(dialog[open]){overflow:hidden}
 
 <dialog class="dlg" id="detail" aria-label="名入れスリーパーのプレゼント詳細">
   <button class="dlg-close" id="closeDetail" type="button" aria-label="閉じる"></button>
-  <div class="dlg-scroll"><img src="images/sleeper-detail.jpg" alt="8万円以上ご購入のお客様限定 お名前入りスリーパーを先着100名様にプレゼント。全5色からランダムでお届け。お名入れできる文字はひらがな5文字、アルファベット10文字。お申し込みはメールでご返信ください。" width="430" height="2000" loading="lazy"></div>
+  <div class="dlg-scroll">
+    <div class="dt">
+      <header class="dt-head">
+        <p class="en">THANK YOU GIFT</p>
+        <p>8万円以上ご購入のお客様限定</p>
+        <h3>《お名前入りスリーパー》</h3>
+        <p>を先着100名様にプレゼント！</p>
+      </header>
+      <div class="dt-hero">
+        <img src="images/dt-hero.jpg" alt="ピンクのスリーパーを着た女の子" width="485" height="640" loading="lazy">
+        <div>
+          <p class="dt-mark">刺繍で名前を<br>入れてお届け</p>
+          <p class="dt-sm">※色はお選びいただけません</p>
+          <p class="dt-age"><span>対象年齢</span>赤ちゃん〜<br>3才頃まで</p>
+        </div>
+      </div>
+      <section class="dt-sec">
+        <h4>寝冷え防止の綿素材使用で<br>肌ざわりの良い、あったかスリーパー</h4>
+        <img src="images/dt-warm.jpg" alt="スリーパーを着た子ども" width="700" height="595" loading="lazy">
+      </section>
+      <section class="dt-sec dt-mist">
+        <h4>股下ボタン付きの2WAYデザイン</h4>
+        <img src="images/dt-2way.jpg" alt="0〜1才頃と2〜3才頃の着用イメージ" width="700" height="595" loading="lazy">
+        <p>1才頃までは股下のボタンを留めてサロペットとして、2才頃からはベストとして使える2WAYデザインです。</p>
+      </section>
+      <section class="dt-sec">
+        <h4>全5色からランダムでお届けします</h4>
+        <div class="dt-five"><img src="images/dt-c1.jpg" alt="赤" loading="lazy"><img src="images/dt-c2.jpg" alt="ベージュ" loading="lazy"><img src="images/dt-c3.jpg" alt="ピンク" loading="lazy"><img src="images/dt-c4.jpg" alt="グリーン" loading="lazy"><img src="images/dt-c5.jpg" alt="ブルー" loading="lazy"></div>
+        <div class="dt-five dt-emb"><img src="images/dt-e1.jpg" alt="てんとう虫の刺繍とKotone" loading="lazy"><img src="images/dt-e2.jpg" alt="気球の刺繍とHana" loading="lazy"><img src="images/dt-e3.jpg" alt="家の刺繍とつくし" loading="lazy"><img src="images/dt-e4.jpg" alt="鳥の刺繍としょうた" loading="lazy"><img src="images/dt-e5.jpg" alt="車の刺繍とYuya" loading="lazy"></div>
+        <p class="dt-cap">名入り刺繍のイメージ</p>
+        <p class="dt-sm">※スリーパーの色や刺繍のイラスト・文字色はお選びいただけません。あらかじめご了承ください。</p>
+      </section>
+      <section class="dt-sec dt-info">
+        <h5>お名入れできる文字</h5>
+        <p class="dt-chars"><span>ひらがな(5文字)</span><span>アルファベット(10文字)</span></p>
+        <p class="dt-sm">※アルファベットの最初の文字は大文字になります</p>
+        <h5>お申し込み・お届けについて</h5>
+        <ul>
+          <li>※プレゼントをご希望のお客様は、本メールに、刺繍をご希望のお名前を記入のうえ、ご返信ください。</li>
+          <li>※プレゼントのお届け先は、ご注文商品の送付先と同じ住所となります。別の住所へのお届けをご希望の場合は、名入れ用のお名前をご返信いただく際に、送付先住所もあわせてお知らせください。</li>
+          <li>※プレゼントは予定数に達し次第、終了いたします。</li>
+          <li>※名入れ用のお名前の確認が完了してから、約1週間程度でお届けいたします。</li>
+        </ul>
+      </section>
+    </div>
+  </div>
 </dialog>
 
 <script>
