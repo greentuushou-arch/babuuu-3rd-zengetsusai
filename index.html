@@ -21,6 +21,7 @@
   --en:"Jost","Noto Sans JP",sans-serif;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--jp);font-weight:450;font-size:17px;line-height:2;letter-spacing:.08em;overflow-x:hidden}
 img{display:block;max-width:100%;height:auto}
@@ -596,6 +597,25 @@ html:has(dialog[open]){overflow:hidden}
     $('cdM').textContent=pad(Math.floor(s%3600/60));
   }
   tick();setInterval(tick,20000);
+
+  // 終了した企画を自動で隠す
+  var ENDS=[
+    {id:'marathon',tile:'.t1',end:'2026-11-11T02:00:00+09:00'},
+    {id:'pointup',tile:'.t2',end:'2026-11-19T00:00:00+09:00'}
+  ];
+  function hideEnded(){
+    var now=Date.now();
+    ENDS.forEach(function(e){
+      if(now>=Date.parse(e.end)){
+        $(e.id).hidden=true;
+        document.querySelector(e.tile).hidden=true;
+      }
+    });
+    var shown=document.querySelectorAll('.tile:not([hidden])').length;
+    if(shown<=1)$('schedule').hidden=true;
+    else document.querySelector('.tiles').style.gridTemplateColumns='repeat('+shown+',1fr)';
+  }
+  hideEnded();setInterval(hideEnded,20000);
 
   // スリーパーの詳細を開く
   var dlg=$('detail'),openBtn=$('openDetail');
