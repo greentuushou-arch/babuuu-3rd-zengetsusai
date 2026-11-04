@@ -148,13 +148,13 @@ html:has(dialog[open]){overflow:hidden}
 .dt-info li{font-size:14.5px;line-height:1.8;color:var(--sub);margin-top:8px}
 
 /* review */
-.rev-lead{font-size:24px;font-weight:600;line-height:1.6;letter-spacing:.08em;margin-bottom:16px}
+.rev-lead{font-size:23px;font-weight:600;line-height:1.5;letter-spacing:.08em;margin-bottom:12px}
 .rev{display:grid;gap:22px;align-items:center}
 .rev-gift{text-decoration:none;background:var(--mist);border-radius:12px;padding:14px;display:grid;grid-template-columns:38% 1fr;gap:14px;align-items:center}
 .rev-gift img{border-radius:8px}
 .rev-gift b{display:block;font-weight:450;font-size:16.5px;line-height:1.65;letter-spacing:.03em}
-.rev-gift span{display:block;font-family:var(--en);font-weight:500;font-size:30px;line-height:1.3;color:var(--blue-text)}
-.rev-gift span small{font-family:var(--jp);font-size:.58em;font-weight:450;margin-left:.1em}
+.rev-gift span{display:block;font-family:var(--en);font-weight:600;font-size:27px;line-height:1.3;letter-spacing:.02em;white-space:nowrap;color:var(--blue-text)}
+.rev-gift span i{font-style:normal;font-size:.7em;margin:0 .1em}
 .rev-choice{font-size:16px;line-height:1.85;color:var(--sub);margin-top:14px}
 
 .btn-venue{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:.55em;background:var(--pink-deep);color:#fff;font-size:18px;font-weight:600;letter-spacing:.06em;padding:1.05em .8em;margin-top:22px;box-shadow:0 5px 0 #C93A6B;animation:pulse 2.4s ease-in-out infinite}
@@ -254,7 +254,8 @@ html:has(dialog[open]){overflow:hidden}
   .head h2{font-size:36px}
   .head h2.camp{font-size:60px}
   .head h2.camp.rev-t{font-size:min(60px,5.4vw)}
-  .rev-lead{font-size:30px;margin-bottom:22px}
+  .rev-lead{font-size:clamp(25px,2.8vw,36px);letter-spacing:.1em;margin-bottom:14px}
+  .rev-gift span{font-size:34px}
   .camp-sub{font-size:24px}
   .head .date{font-size:22px}
   .panel{padding:40px 44px 44px}
@@ -388,16 +389,16 @@ html:has(dialog[open]){overflow:hidden}
       <h2 class="camp rev-t">REVIEW<br class="sp"> PRESENT CAMPAIGN</h2>
     </div>
     <div class="panel">
-      <p class="rev-lead">レビューでおしりふきを<br class="sp">プレゼント</p>
       <div class="rev">
         <div>
+          <p class="rev-lead">レビュー記載で<br>おしりふきをプレゼント</p>
           <p class="bignum b">11,000<small>円以上(税込)</small></p>
           <p class="deal-to">の商品すべてが対象です</p>
         </div>
         <div>
           <a class="rev-gift" href="https://item.rakuten.co.jp/babuuu/bgoods-00254/" target="_blank" rel="noopener">
             <img src="images/wipes.jpg" alt="超厚手おしりふき手口ふき 20枚入り" loading="lazy">
-            <div><b>超厚手おしりふき<br>手口ふき 20枚</b><span>2<small>個</small></span></div>
+            <div><b>超厚手おしりふき<br>手口ふき</b><span>20枚<i>×</i>2個</span></div>
           </a>
           <p class="rev-choice">いまレビュー特典が付いている商品は<br>どちらかお好きな特典を選べます</p>
           <a class="btn" href="https://item.rakuten.co.jp/babuuu/bgoods-00254/" target="_blank" rel="noopener">おしりふきを見る</a>
