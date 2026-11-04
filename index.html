@@ -115,6 +115,7 @@ a:focus-visible{outline:2px solid var(--blue-text);outline-offset:3px}
 .btn:hover{opacity:.8}
 
 .dlg{border:0;padding:54px 0 0;background:transparent;width:min(480px,calc(100vw - 24px));max-width:none;max-height:none;overflow:visible;margin:auto}
+html:has(dialog[open]){overflow:hidden}
 .dlg::backdrop{background:rgba(30,32,35,.72)}
 .dlg-scroll{max-height:calc(100vh - 78px);max-height:calc(100dvh - 78px);overflow-y:auto;overscroll-behavior:contain;background:#fff;border-radius:12px}
 .dlg-scroll img{width:100%}
@@ -533,9 +534,7 @@ a:focus-visible{outline:2px solid var(--blue-text);outline-offset:3px}
       e.preventDefault();
       dlg.showModal();
       dlg.querySelector('.dlg-scroll').scrollTop=0;
-      document.documentElement.style.overflow='hidden';
     });
-    dlg.addEventListener('close',function(){document.documentElement.style.overflow=''});
     dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
     $('closeDetail').addEventListener('click',function(){dlg.close()});
   }
