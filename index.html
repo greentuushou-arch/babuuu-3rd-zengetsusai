@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>babuuu. 3周年 前月祭</title>
+<meta name="description" content="12月の3周年をまえに、11月はお祝いの前月祭。名入れスリーパープレゼント、レビュー特典、お買い物マラソン連動企画、ポイントアップ、ブラックフライデー。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400..700&family=Jost:wght@400..600&display=swap" rel="stylesheet">
+<style>
+/* babuuu.のバナーの空気(薄いグレーの壁×写真)に、家具のソムリエのゴシックを字間広めで合わせる */
+:root{
+  --wall:#DCE5EA;--wall-2:#D9E4E4;
+  --ink:#4A4F54;--sub:#666C71;--line:#DCE1E4;--paper:#fff;--mist:#F4F6F7;--night:#34393E;
+  --yellow:#FFCB2E;--yellow-pale:#FFE285;
+  --pink:#FF6B97;--pink-deep:#EC5586;--pink-pale:#FFB9CD;--pink-text:#DB3F72;
+  --blue:#6FC0E4;--blue-pale:#CDE9F6;--blue-text:#2B88B5;
+  --jp:"Noto Sans JP",-apple-system,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  --en:"Jost","Noto Sans JP",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--jp);font-weight:450;font-size:17px;line-height:2;letter-spacing:.08em;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3,h4,p,dl,dd,ul{margin:0;padding:0;font-weight:inherit}
+ul{list-style:none}
+.nw{white-space:nowrap}
+.wrap{width:100%;max-width:1040px;margin:0 auto;padding:0 20px}
+.sp{display:inline}.pc{display:none}
+a:focus-visible{outline:2px solid var(--blue-text);outline-offset:3px}
+
+/* header */
+.hd{background:var(--paper)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
+.hd img{width:104px}
+.hd p{font-size:14.5px;line-height:1.5;color:var(--sub);text-align:right}
+
+/* FV */
+.fv{position:relative;background:var(--wall);overflow:hidden}
+.fv-copy{position:relative;z-index:2;padding:34px 22px 0}
+.candles{display:block;width:74px;height:auto;overflow:visible;margin-bottom:14px}
+.flame{transform-box:fill-box;transform-origin:50% 100%;transform:scale(0);animation:lit .6s ease-out forwards,flick 1.8s ease-in-out infinite alternate}
+.flame.f1{animation-delay:.5s,1.1s}.flame.f2{animation-delay:1.1s,1.7s}.flame.f3{animation-delay:1.7s,2.3s}
+@keyframes lit{to{transform:scale(1)}}
+@keyframes flick{from{transform:scale(1) rotate(-3deg)}to{transform:scale(1.05,.95) rotate(3deg)}}
+.fv-kick{font-size:17px;line-height:1.9;letter-spacing:.1em}
+.fv h1{line-height:1;margin:18px 0 14px;letter-spacing:.12em}
+.fv h1 .a{display:block;font-size:30px;font-weight:450}
+.fv h1 .b{display:flex;align-items:baseline;font-size:58px;font-weight:450}
+.fv h1 .num{font-family:var(--en);font-weight:500;font-size:148px;line-height:.92;letter-spacing:0;margin-right:.08em}
+.fv-name{font-size:19px;line-height:1.5;letter-spacing:.12em;font-weight:600}
+.fv-photo{display:block;width:100%;margin-top:6px;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 6%);mask-image:linear-gradient(to bottom,transparent,#000 6%)}
+.fv-photo.is-pc{display:none}
+
+/* period + countdown */
+.cd{padding:30px 0 34px;text-align:center}
+.cd-period{font-family:var(--en);font-weight:500;font-size:27px;line-height:1.4;letter-spacing:.06em}
+.cd-period small{font-size:.52em;margin-left:.2em;letter-spacing:.1em}
+.cd-sub{font-size:15.5px;line-height:1.7;color:var(--sub)}
+.cd-now{margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
+.cd-label{font-size:17px;font-weight:600;line-height:1.6;letter-spacing:.04em}
+.cd-date{font-size:15.5px;color:var(--sub);line-height:1.7}
+.cd-time{display:flex;justify-content:center;align-items:baseline;gap:5px;margin-top:6px;font-size:15.5px;font-variant-numeric:tabular-nums}
+.cd-time b{font-family:var(--en);font-weight:500;font-size:44px;line-height:1.15;letter-spacing:.02em}
+.cd-time i{font-style:normal;margin-right:12px;color:var(--sub)}
+.cd.is-end .cd-time{display:none}
+
+/* sections */
+.sec{padding:64px 0 70px;position:relative}
+.sec--camp{background:var(--pink-deep)}
+.sec--camp .head{color:#fff}
+.sec--camp .kick{color:#fff}
+.head h2.camp{font-family:var(--en);font-weight:500;font-size:min(29px,7.7vw);line-height:1.4;letter-spacing:.04em;white-space:nowrap}
+.camp-sub{font-size:19px;font-weight:600;line-height:1.7;margin-top:.3em}
+.sec--yellow{background:var(--yellow-pale)}
+.sec--pink{background:var(--pink-pale)}
+.sec--paper{background:var(--paper)}
+.head{margin-bottom:28px}
+.kick{font-size:16px;line-height:1.6;letter-spacing:.14em;color:var(--ink)}
+.head h2{font-size:27px;font-weight:600;line-height:1.65;letter-spacing:.1em;margin-top:.3em}
+.head .date{font-family:var(--en);font-weight:500;font-size:19px;line-height:1.5;margin-top:.6em;letter-spacing:.04em}
+.head .lead{margin-top:.6em}
+
+.panel{position:relative;background:var(--paper);border-radius:18px;padding:26px 20px 28px}
+
+/* present */
+.pres{display:grid;gap:22px}
+.pres img{border-radius:12px}
+.pres-gal{display:grid;grid-template-columns:1fr 1fr;gap:10px;min-width:0}
+.pres-gal .main{grid-column:1/-1}
+.tag{display:inline-block;background:var(--yellow);font-size:15.5px;font-weight:600;line-height:1.5;padding:.2em .9em;border-radius:6px}
+.deal-line{font-size:18px;line-height:1.7;margin-top:14px}
+.bignum{display:block;white-space:nowrap;font-family:var(--en);font-weight:500;font-size:54px;line-height:1.15;letter-spacing:.01em}
+.bignum.b{color:var(--blue-text)}.bignum.p{color:var(--pink-text)}
+.bignum small{font-family:var(--jp);font-weight:450;font-size:.34em;color:var(--ink);margin-left:.25em;letter-spacing:.06em}
+.deal-to{font-size:21px;font-weight:600;line-height:1.7;letter-spacing:.08em;margin-top:6px}
+.cond{font-size:18px;line-height:1.7;margin-top:14px}
+.cond b{font-family:var(--en);font-weight:500;font-size:1.25em}
+.gift{margin-top:8px;line-height:1.3}
+.g1{display:block;font-size:27px;font-weight:600;letter-spacing:.06em}
+.g2{display:inline-block;font-size:46px;font-weight:600;letter-spacing:.02em;color:var(--pink-text);padding:0 .06em;background:linear-gradient(transparent 80%,var(--yellow) 80%)}
+.g2 i{display:inline-block;font-style:normal;animation:hop 3.6s ease-in-out infinite}
+@keyframes hop{0%,20%,100%{transform:translateY(0)}7%{transform:translateY(-.2em)}13%{transform:translateY(.02em)}}
+.shine{position:relative;display:block;overflow:hidden;border-radius:12px}
+.shine::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-18deg);animation:sweep 3.6s ease-in-out infinite}
+@keyframes sweep{0%{left:-60%}35%,100%{left:130%}}
+.spec{margin-top:18px;border-top:1px solid var(--line)}
+.spec div{display:grid;grid-template-columns:3.4em 1fr;gap:6px;padding:10px 0;border-bottom:1px solid var(--line);line-height:1.7}
+.spec dt{color:var(--sub)}
+.btn{display:block;text-align:center;background:var(--ink);color:#fff;font-size:17px;font-weight:600;line-height:1.5;letter-spacing:.1em;text-decoration:none;padding:.9em 1em;border-radius:999px;margin-top:22px;transition:opacity .2s}
+.btn:hover{opacity:.8}
+
+/* review */
+.rev-lead{font-size:24px;font-weight:600;line-height:1.6;letter-spacing:.08em;margin-bottom:16px}
+.rev{display:grid;gap:22px;align-items:center}
+.rev-gift{text-decoration:none;background:var(--mist);border-radius:12px;padding:14px;display:grid;grid-template-columns:38% 1fr;gap:14px;align-items:center}
+.rev-gift img{border-radius:8px}
+.rev-gift b{display:block;font-weight:450;font-size:16.5px;line-height:1.65;letter-spacing:.03em}
+.rev-gift span{display:block;font-family:var(--en);font-weight:500;font-size:30px;line-height:1.3;color:var(--blue-text)}
+.rev-gift span small{font-family:var(--jp);font-size:.58em;font-weight:450;margin-left:.1em}
+.rev-choice{font-size:16px;line-height:1.85;color:var(--sub);margin-top:14px}
+
+.btn-venue{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:.55em;background:var(--pink-deep);color:#fff;font-size:18px;font-weight:600;letter-spacing:.06em;padding:1.05em .8em;margin-top:22px;box-shadow:0 5px 0 #C93A6B;animation:pulse 2.4s ease-in-out infinite}
+.btn-venue::after{content:"";flex:none;width:.55em;height:.55em;border-top:3px solid #fff;border-right:3px solid #fff;transform:rotate(45deg)}
+.btn-venue::before{content:"";position:absolute;top:0;bottom:0;left:-40%;width:28%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg);animation:sweep 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:30px}
+.tile{display:flex;flex-direction:column;justify-content:center;text-align:center;text-decoration:none;border-radius:12px;min-height:124px;padding:12px 0;line-height:1.45;transition:transform .2s}
+.tile:hover{transform:translateY(-3px)}
+.tile b{font-weight:450;font-size:14.5px}
+.tile strong{font-weight:600;font-size:14px;letter-spacing:0;white-space:nowrap;margin-top:2px}
+.tile time{font-family:var(--en);font-weight:500;font-size:14.5px;margin-top:6px;letter-spacing:.01em}
+.t1{background:var(--pink);color:#2F3235}.t2{background:var(--yellow)}.t3{background:var(--night);color:#fff}
+.t3 strong{font-family:var(--en);letter-spacing:.1em}
+
+/* marathon */
+.group{background:var(--paper);border-radius:18px;margin-top:20px;overflow:hidden}
+.group-head{display:flex;align-items:center;gap:16px;padding:16px 18px;border-bottom:1px solid var(--line);line-height:1.5}
+.deal{flex:none;font-size:18px;line-height:1.1;color:var(--pink-text)}
+.deal b{font-family:var(--en);font-weight:500;font-size:48px;line-height:1}
+.deal i{font-family:var(--en);font-style:normal;font-weight:500;font-size:20px}
+.group-head h3{font-family:var(--en);font-weight:500;font-size:19px;line-height:1.5;letter-spacing:.04em}
+.group-head h3 small{display:block;font-family:var(--jp);font-weight:450;font-size:15px;color:var(--sub);letter-spacing:.03em}
+.items{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 14px;padding:16px 14px 20px}
+.it{display:flex;flex-direction:column;text-decoration:none;min-width:0}
+.it img{width:100%;aspect-ratio:1/1;object-fit:contain;border-radius:10px;transition:opacity .2s}
+.it:hover img{opacity:.85}
+.it h4{font-size:15.5px;line-height:1.65;letter-spacing:.03em;margin:10px 0 4px;flex:1}
+.it h4 small{display:block;font-size:14.5px;color:var(--sub);letter-spacing:0}
+.it .go{font-size:15px;color:var(--blue-text);line-height:1.5}
+.cols3 .it:last-child:nth-child(odd){grid-column:1/-1}
+.cols3 .it:last-child:nth-child(odd) img{width:calc(50% - 7px);margin:0 auto}
+.cols3 .it:last-child:nth-child(odd) h4,.cols3 .it:last-child:nth-child(odd) .go{text-align:center;align-self:center}
+
+/* point up */
+.pu{text-align:center;background:var(--yellow-pale)}
+.pu-h{font-size:29px;font-weight:600;line-height:1.6;letter-spacing:.06em;margin-top:.4em}
+.pu-date{font-family:var(--en);font-weight:500;font-size:19px;margin-top:.5em;line-height:1.5}
+.pu-rate{font-size:29px;font-weight:600;line-height:1.6;letter-spacing:.06em;margin:.1em 0 .7em}
+.pu-rate span{font-family:var(--en);font-weight:500;letter-spacing:.02em}
+
+/* black friday */
+.bf{text-align:center;background:var(--night);color:#fff}
+.bf .kick{color:#fff;opacity:.75}
+.bf h2{font-family:var(--en);font-weight:500;font-size:40px;line-height:1.25;letter-spacing:.14em;margin-top:.2em}
+.bf-boxes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:560px;margin:34px auto 26px}
+.sb{position:relative;min-width:0;line-height:1;aspect-ratio:1/1;border:1px solid rgba(255,255,255,.45);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--en);font-size:40px;font-weight:500}
+.sb::before,.sb::after{content:"";position:absolute;background:rgba(255,255,255,.2)}
+.sb::before{top:0;bottom:0;left:50%;width:1px}
+.sb::after{left:0;right:0;top:50%;height:1px}
+.sb span{position:relative;z-index:1;background:var(--night);padding:.08em .28em}
+.sb.y span{color:var(--yellow)}.sb.p span{color:var(--pink)}.sb.b span{color:var(--blue)}
+.bf-word{font-size:21px;font-weight:600;line-height:1.6;letter-spacing:.12em}
+.bf .lead{margin-top:.5em;opacity:.85}
+
+/* closing */
+.end{background:var(--wall-2)}
+.end-photo{width:100%}
+.end-txt{padding:40px 22px 50px;text-align:center}
+.end h2{font-size:25px;font-weight:600;line-height:1.75;letter-spacing:.1em}
+.end h2 .num{font-family:var(--en);font-weight:500;font-size:1.3em;line-height:1;letter-spacing:0;margin:0 .04em}
+.end p{margin-top:.9em}
+.end .end-next{font-weight:600;font-size:19px;line-height:1.9;margin-top:1em}
+.end .btn{max-width:340px;margin:26px auto 0}
+.ft{background:var(--paper);color:var(--sub);padding:22px 0;font-size:14.5px;line-height:1.85}
+.ft ul{display:grid;gap:2px}
+.ft li{padding-left:1em;text-indent:-1em}
+
+.rv{transform:translateY(12px);transition:transform .7s ease}
+.rv.on{transform:none}
+.no-js .rv{transform:none}
+
+@media (min-width:768px){
+  body{font-size:18px}
+  .sp{display:none}.pc{display:inline}
+  .wrap{padding:0 28px}
+  .hd img{width:130px}
+  .hd p{font-size:16px}
+  .fv-copy{position:absolute;left:max(4vw,calc((100% - 1040px)/2 + 28px));top:50%;transform:translateY(-50%);padding:0}
+  .candles{width:clamp(64px,7vw,92px);margin-bottom:clamp(8px,1.4vw,18px)}
+  .fv-kick{font-size:clamp(15px,1.5vw,19px)}
+  .fv h1{margin:clamp(10px,1.4vw,20px) 0 clamp(8px,1.2vw,16px)}
+  .fv h1 .a{font-size:clamp(25px,3.1vw,42px)}
+  .fv h1 .b{font-size:clamp(46px,5.4vw,78px)}
+  .fv h1 .num{font-size:clamp(104px,13.6vw,200px)}
+  .fv-name{font-size:clamp(16px,1.8vw,24px)}
+  .fv-photo{display:none;margin-top:0;-webkit-mask-image:none;mask-image:none}
+  .fv-photo.is-pc{display:block}
+  .cd{padding:30px 0}
+  .cd .wrap{display:flex;justify-content:center;align-items:center;gap:44px;text-align:left}
+  .cd-now{margin-top:0;padding:0 0 0 44px;border-top:0;border-left:1px solid var(--line);display:flex;align-items:center;gap:26px}
+  .cd-period{font-size:27px}
+  .cd-time{margin-top:0}
+  .sec{padding:92px 0 98px}
+  .head{margin-bottom:36px}
+  .head h2{font-size:36px}
+  .head h2.camp{font-size:60px}
+  .head h2.camp.rev-t{font-size:min(60px,5.4vw)}
+  .rev-lead{font-size:30px;margin-bottom:22px}
+  .camp-sub{font-size:24px}
+  .head .date{font-size:22px}
+  .panel{padding:40px 44px 44px}
+  .btn-venue{font-size:26px;padding:.95em 1em;margin-top:26px}
+  .pres{grid-template-columns:1fr;gap:30px}
+  .pres-gal{grid-template-columns:2fr 1fr;gap:12px}
+  .pres-gal .main{grid-column:1;grid-row:1/3}
+  .pres-gal>img,.pres-gal .main img{width:100%;height:100%;object-fit:cover}
+  .pres-info{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto 1fr;column-gap:40px}
+  .pres-info .tag{justify-self:start;align-self:start}
+  .pres-info .spec{grid-column:2;grid-row:1/3;margin-top:0}
+  .pres-info .btn{grid-column:2;grid-row:3;align-self:end;margin-top:16px}
+  .bignum{font-size:84px}
+  .deal-to{font-size:25px}
+  .cond{font-size:21px}
+  .g2{font-size:min(68px,5.2vw);white-space:nowrap}
+  .g1{font-size:min(34px,2.7vw)}
+  .rev{grid-template-columns:1fr 1fr;gap:44px}
+  .rev-gift b{font-size:18px}
+  .tiles{gap:18px;margin-top:40px}
+  .tile{min-height:150px}
+  .tile b{font-size:16px}.tile strong{font-size:23px;letter-spacing:.06em}.tile time{font-size:18px}
+  .group{margin-top:26px}
+  .group-head{padding:20px 30px;gap:26px}
+  .deal{font-size:22px}
+  .deal b{font-size:62px}.deal i{font-size:26px}
+  .group-head h3{font-size:23px}
+  .group-head h3 small{font-size:16.5px}
+  .items{grid-template-columns:repeat(4,1fr);gap:22px;padding:24px 30px 30px}
+  .cols3{grid-template-columns:repeat(3,1fr);max-width:82%;margin:0 auto}
+  .cols3 .it:last-child:nth-child(odd){grid-column:auto}
+  .cols3 .it:last-child:nth-child(odd) img{width:100%}
+  .cols3 .it:last-child:nth-child(odd) h4,.cols3 .it:last-child:nth-child(odd) .go{text-align:left;align-self:auto}
+  .it h4{font-size:16.5px}
+  .pu-h,.pu-rate{font-size:52px}
+  .pu-date{font-size:24px}
+  .bf h2{font-size:72px}
+  .sb{font-size:64px}
+  .bf-word{font-size:26px}
+  .end-in{display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:1280px;margin:0 auto}
+  .end-txt{padding:40px 36px;text-align:left}
+  .end h2{font-size:clamp(25px,2.8vw,34px)}
+  .end .btn{margin:26px 0 0}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .flame{transform:none}.rv{transform:none}
+}
+</style>
+</head>
+<body class="no-js">
+<script>document.body.classList.remove('no-js')</script>
+
+<header class="hd">
+  <div class="wrap">
+    <a href="https://www.rakuten.co.jp/babuuu/" target="_blank" rel="noopener"><img src="images/logo.png" alt="babuuu." width="893" height="220"></a>
+    <p>3周年 前月祭 <span class="nw">11/4 – 11/30</span></p>
+  </div>
+</header>
+
+<section class="fv" aria-label="もうすぐ3さい babuuu. 3周年 前月祭">
+  <div class="fv-copy">
+    <svg class="candles" viewBox="0 0 92 78" aria-hidden="true">
+      <path class="flame f1" d="M14 26c-8-6-7-13 0-24 7 11 8 18 0 24z" fill="#FFB84D"/>
+      <path class="flame f2" d="M46 26c-8-6-7-13 0-24 7 11 8 18 0 24z" fill="#FFB84D"/>
+      <path class="flame f3" d="M78 26c-8-6-7-13 0-24 7 11 8 18 0 24z" fill="#FFB84D"/>
+      <rect x="9" y="30" width="10" height="48" rx="3" fill="#FF6B97"/>
+      <rect x="41" y="30" width="10" height="48" rx="3" fill="#FFCB2E"/>
+      <rect x="73" y="30" width="10" height="48" rx="3" fill="#6FC0E4"/>
+    </svg>
+    <p class="fv-kick">12月の3周年をまえに<br>ありがとうのお祝いをはじめます</p>
+    <h1><span class="a">もうすぐ</span><span class="b"><span class="num">3</span>さい</span></h1>
+    <p class="fv-name">babuuu. 3周年 前月祭</p>
+  </div>
+  <img class="fv-photo is-pc" src="images/fv.jpg" alt="空を見上げて椅子に座る子ども" width="1620" height="700">
+  <img class="fv-photo" src="images/fv-sp.jpg" alt="" width="920" height="700">
+</section>
+
+<section class="cd" id="count">
+  <div class="wrap">
+    <div>
+      <p class="cd-period">2026.11.4<small>WED</small> – 11.30<small>MON</small></p>
+      <p class="cd-sub">11月はずーっとお祝い月間</p>
+    </div>
+    <div class="cd-now">
+      <div>
+        <p class="cd-label" id="cdLabel">お買い物マラソン連動企画 終了まで</p>
+        <p class="cd-date" id="cdDate">11/4(水)20:00 – 11/11(水)01:59</p>
+      </div>
+      <p class="cd-time"><b id="cdD">0</b><i>日</i><b id="cdH">00</b><i>時間</i><b id="cdM">00</b><i>分</i></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--camp" id="present">
+  <div class="wrap rv">
+    <div class="head">
+      <p class="kick">11月ずっと 特別プレゼント</p>
+      <h2 class="camp">PRESENT CAMPAIGN!!</h2>
+      <p class="camp-sub">お子さまの名前を入れて贈ります</p>
+      <p class="date">11/4(水) – 11/30(月)</p>
+    </div>
+    <div class="panel">
+      <div class="pres">
+        <div class="pres-gal">
+          <span class="shine main"><img src="images/sleeper-name.jpg" alt="お名前入りのスリーパーとピンクのギフトボックス" loading="lazy"></span>
+          <img src="images/sleeper-rack.jpg" alt="ハンガーに並んだ全色のスリーパー" loading="lazy">
+          <img src="images/sleeper-kid.jpg" alt="スリーパーを着て絵本を読む子ども" loading="lazy">
+        </div>
+        <div class="pres-info">
+          <span class="tag">先着100名様限定</span>
+          <p class="cond">1回のご注文<br class="sp"> <span class="nw"><b>80,000</b>円以上(税込)で</span></p>
+          <p class="gift"><span class="g1">名入れスリーパー</span><span class="g2" aria-label="プレゼント！"><i style="animation-delay:0.00s">プ</i><i style="animation-delay:0.09s">レ</i><i style="animation-delay:0.18s">ゼ</i><i style="animation-delay:0.27s">ン</i><i style="animation-delay:0.36s">ト</i><i style="animation-delay:0.45s">！</i></span></p>
+          <dl class="spec">
+            <div><dt>期間</dt><dd>11/4(水) – 11/30(月)</dd></div>
+            <div><dt>対象</dt><dd>1回のご注文 <span class="nw">80,000円以上(税込)</span></dd></div>
+            <div><dt>数量</dt><dd>先着100名様 <span class="nw">なくなり次第終了</span></dd></div>
+          </dl>
+          <a class="btn" href="https://item.rakuten.co.jp/babuuu/name-sleeper-001/" target="_blank" rel="noopener">スリーパーを見る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--yellow" id="review">
+  <div class="wrap rv">
+    <div class="head">
+      <p class="kick">11月ずっと レビュー特典</p>
+      <h2 class="camp rev-t">REVIEW<br class="sp"> PRESENT CAMPAIGN</h2>
+    </div>
+    <div class="panel">
+      <p class="rev-lead">レビューでおしりふきを<br class="sp">プレゼント</p>
+      <div class="rev">
+        <div>
+          <p class="bignum b">11,000<small>円以上(税込)</small></p>
+          <p class="deal-to">の商品すべてが対象です</p>
+        </div>
+        <div>
+          <a class="rev-gift" href="https://item.rakuten.co.jp/babuuu/bgoods-00254/" target="_blank" rel="noopener">
+            <img src="images/wipes.jpg" alt="超厚手おしりふき手口ふき 20枚入り" loading="lazy">
+            <div><b>超厚手おしりふき<br>手口ふき 20枚</b><span>2<small>個</small></span></div>
+          </a>
+          <p class="rev-choice">いまレビュー特典が付いている商品は<br>どちらかお好きな特典を選べます</p>
+          <a class="btn" href="https://item.rakuten.co.jp/babuuu/bgoods-00254/" target="_blank" rel="noopener">おしりふきを見る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--paper" id="schedule">
+  <div class="wrap rv">
+    <div class="head">
+      <p class="kick">11月のおたのしみ</p>
+      <h2>期間ごとに<br class="sp">お得が変わります</h2>
+    </div>
+
+    <nav class="tiles" aria-label="企画へ移動">
+      <a class="tile t1" href="#marathon"><b>第一弾</b><strong>マラソン連動</strong><time>11/4 – 11/11</time></a>
+      <a class="tile t2" href="#pointup"><b>第二弾</b><strong>ポイントアップ</strong><time>11/15 – 11/18</time></a>
+      <a class="tile t3" href="#blackfriday"><b>第三弾</b><strong>SECRET</strong></a>
+    </nav>
+  </div>
+</section>
+
+<section class="sec sec--pink" id="marathon">
+  <div class="wrap rv">
+    <div class="head">
+      <p class="kick">第一弾</p>
+      <h2>お買い物マラソン<br class="sp">連動企画</h2>
+      <p class="date">11/4(水)20:00 – 11/11(水)01:59</p>
+      <a class="btn btn-venue" href="https://www.rakuten.co.jp/babuuu/contents/event/sale/" target="_blank" rel="noopener">お買い物マラソン会場はこちら</a>
+    </div>
+
+    <div class="group">
+      <div class="group-head">
+        <p class="deal"><b>10</b><i>%OFF</i></p>
+        <h3>KATOJI<small>ベッド・ベビーカー・<br class="sp">ゲート</small></h3>
+      </div>
+      <div class="items">
+        <a class="it" href="https://item.rakuten.co.jp/babuuu/bgoods-00434/" target="_blank" rel="noopener"><img src="images/shirone.jpg" alt="カトージ ベビーベッド＆サークル シロネ" loading="lazy"><h4>ベビーベッド＆<br>サークル シロネ</h4><span class="go">商品を見る</span></a>
+        <a class="it" href="https://item.rakuten.co.jp/babuuu/bgoods-00445/" target="_blank" rel="noopener"><img src="images/breeze.jpg" alt="カトージ コンパクトベビーカー breeze" loading="lazy"><h4>コンパクト<br>ベビーカー breeze<small>ブラック／ベージュ</small></h4><span class="go">商品を見る</span></a>
+        <a class="it" href="https://item.rakuten.co.jp/babuuu/bgoods-00463/" target="_blank" rel="noopener"><img src="images/gate-m.jpg" alt="カトージ ベビーセーフティオートゲート スリムM ホワイト" loading="lazy"><h4>ベビーセーフティ<br>オートゲート <span class="nw">スリムM</span><small>ホワイト</small></h4><span class="go">商品を見る</span></a>
+        <a class="it" href="https://item.rakuten.co.jp/babuuu/bgoods-00464/" target="_blank" rel="noopener"><img src="images/gate-s.jpg" alt="カトージ ベビーセーフティオートゲート スリムS ホワイト" loading="lazy"><h4>ベビーセーフティ<br>オートゲート <span class="nw">スリムS</span><small>ホワイト</small></h4><span class="go">商品を見る</span></a>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-head">
+        <p class="deal"><i>P</i><b>11</b>倍</p>
+        <h3>Ergobaby<small>ヒップシートとスリング</small></h3>
+      </div>
+      <div class="items cols3">
+        <a class="it" href="https://item.rakuten.co.jp/babuuu/bgoods-00374/" target="_blank" rel="noopener"><img src="images/lift.jpg" alt="Ergobaby Lift ヒップシート" loading="lazy"><h4>Lift ヒップシート<small>全3色</small></h4><span class="go">商品を見る</span></a>
+        <a class="it" href="https://item.rakuten.co.jp/babuuu/bgoods-00375/" target="_blank" rel="noopener"><img src="images/alta.jpg" alt="Ergobaby Alta ヒップシートキャリア" loading="lazy"><h4>Alta ヒップシート<br>キャリア<small>全3色</small></h4><span class="go">商品を見る</span></a>
+        <a class="it" href="https://item.rakuten.co.jp/babuuu/bgoods-00377/" target="_blank" rel="noopener"><img src="images/upsie.jpg" alt="Ergobaby Upsie スリング" loading="lazy"><h4>Upsie スリング<small>全2色</small></h4><span class="go">商品を見る</span></a>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-head">
+        <p class="deal"><i>P</i><b>10</b>倍</p>
+        <h3>AIRBUGGY<small>ベビーキャリアとアクセサリー</small></h3>
+      </div>
+      <div class="items">
+        <a class="it" href="https://item.rakuten.co.jp/babuuu/bgoods-00389/" target="_blank" rel="noopener"><img src="images/comfo.jpg" alt="AIRBUGGY ベビーキャリア COMFO コンプリートセット" loading="lazy"><h4>ベビーキャリア COMFO<small>コンプリートセット</small></h4><span class="go">商品を見る</span></a>
+        <a class="it" href="https://item.rakuten.co.jp/babuuu/bgoods-00437/" target="_blank" rel="noopener"><img src="images/tempo.jpg" alt="AIRBUGGY ベビーキャリア TEMPO" loading="lazy"><h4>ベビーキャリア TEMPO</h4><span class="go">商品を見る</span></a>
+        <a class="it" href="https://item.rakuten.co.jp/babuuu/bgoods-00391/" target="_blank" rel="noopener"><img src="images/buckle.jpg" alt="AIRBUGGY ベビーキャリア バックルカバー" loading="lazy"><h4>バックルカバー<small>COMFO・TEMPO共通</small></h4><span class="go">商品を見る</span></a>
+        <a class="it" href="https://item.rakuten.co.jp/babuuu/bgoods-00390/" target="_blank" rel="noopener"><img src="images/headpad.jpg" alt="AIRBUGGY ベビーキャリア ヘッドサポートパッド" loading="lazy"><h4>ヘッドサポート<br class="sp">パッド<small>COMFO・TEMPO共通</small></h4><span class="go">商品を見る</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec pu" id="pointup">
+  <div class="wrap rv">
+    <p class="kick">第二弾</p>
+    <h2 class="pu-h">4日間のポイントアップ</h2>
+    <p class="pu-date">11/15(日) – 11/18(水)</p>
+    <p class="pu-rate">P<span>2</span>倍〜最大<span>10</span>倍</p>
+    <p>対象商品とポイント倍率は<br class="sp">各商品ページでご確認ください</p>
+  </div>
+</section>
+
+<section class="sec bf" id="blackfriday">
+  <div class="wrap rv">
+    <p class="kick">第三弾</p>
+    <h2>BLACK<br class="sp"> FRIDAY</h2>
+    <div class="bf-boxes" aria-hidden="true">
+      <div class="sb y"><span>?</span></div>
+      <div class="sb p"><span>?</span></div>
+      <div class="sb b"><span>?</span></div>
+    </div>
+    <p class="bf-word">中身はまだシークレット</p>
+    <p class="lead">とっておきの内容は<br class="sp">当日のお楽しみです</p>
+  </div>
+</section>
+
+<section class="end">
+  <div class="end-in">
+    <img class="end-photo" src="images/staff.jpg" alt="babuuu.のスタッフ" width="1080" height="700" loading="lazy">
+    <div class="end-txt">
+      <h2>そして12月<br>babuuu.は<span class="num">3</span>さいに<br class="sp">なります</h2>
+      <p>いつもご利用いただき<br class="sp">ありがとうございます</p>
+      <p class="end-next">12月はbabuuu.誕生祭<br class="sp">キャンペーンを開催します<br>お楽しみに</p>
+      <a class="btn" href="https://www.rakuten.co.jp/babuuu/" target="_blank" rel="noopener">babuuu. トップへ</a>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">
+    <ul>
+      <li>※ 価格・ポイント倍率・在庫は変更になる場合があります。最新の内容は各商品ページをご確認ください。</li>
+      <li>※ 名入れスリーパーのプレゼントは先着100名様限定です。なくなり次第終了します。</li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var PHASES=[
+    {from:'2026-11-04T00:00:00+09:00',to:'2026-11-04T20:00:00+09:00',label:'マラソン連動企画 スタートまで',date:'11/4(水)20:00 – 11/11(水)01:59'},
+    {from:'2026-11-04T20:00:00+09:00',to:'2026-11-11T02:00:00+09:00',label:'マラソン連動企画 終了まで',date:'11/4(水)20:00 – 11/11(水)01:59'},
+    {from:'2026-11-11T02:00:00+09:00',to:'2026-11-15T00:00:00+09:00',label:'ポイントアップ スタートまで',date:'11/15(日) – 11/18(水)'},
+    {from:'2026-11-15T00:00:00+09:00',to:'2026-11-19T00:00:00+09:00',label:'ポイントアップ 終了まで',date:'11/15(日) – 11/18(水)'},
+    {from:'2026-11-19T00:00:00+09:00',to:'2026-12-01T00:00:00+09:00',label:'前月祭 終了まで',date:'11/30(月)まで'}
+  ];
+  var $=function(id){return document.getElementById(id)};
+  var pad=function(n){return (n<10?'0':'')+n};
+  function tick(){
+    var now=Date.now(),cur=null;
+    for(var i=0;i<PHASES.length;i++){
+      if(now>=Date.parse(PHASES[i].from)&&now<Date.parse(PHASES[i].to)){cur=PHASES[i];break}
+    }
+    if(!cur){
+      $('count').classList.add('is-end');
+      $('cdLabel').textContent='前月祭は終了しました';
+      $('cdDate').textContent='12月のbabuuu.誕生祭もお楽しみに';
+      return;
+    }
+    var s=Math.floor((Date.parse(cur.to)-now)/1000);
+    $('cdLabel').textContent=cur.label;
+    $('cdDate').textContent=cur.date;
+    $('cdD').textContent=Math.floor(s/86400);
+    $('cdH').textContent=pad(Math.floor(s%86400/3600));
+    $('cdM').textContent=pad(Math.floor(s%3600/60));
+  }
+  tick();setInterval(tick,20000);
+
+  // スクロールで表示
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
