@@ -114,6 +114,14 @@ a:focus-visible{outline:2px solid var(--blue-text);outline-offset:3px}
 .btn{display:block;text-align:center;background:var(--ink);color:#fff;font-size:17px;font-weight:600;line-height:1.5;letter-spacing:.1em;text-decoration:none;padding:.9em 1em;border-radius:999px;margin-top:22px;transition:opacity .2s}
 .btn:hover{opacity:.8}
 
+.dlg{border:0;padding:54px 0 0;background:transparent;width:min(480px,calc(100vw - 24px));max-width:none;max-height:none;overflow:visible;margin:auto}
+.dlg::backdrop{background:rgba(30,32,35,.72)}
+.dlg-scroll{max-height:calc(100vh - 78px);max-height:calc(100dvh - 78px);overflow-y:auto;overscroll-behavior:contain;background:#fff;border-radius:12px}
+.dlg-scroll img{width:100%}
+.dlg-close{position:absolute;top:0;right:0;z-index:2;width:44px;height:44px;border:0;border-radius:50%;background:#fff;cursor:pointer}
+.dlg-close::before,.dlg-close::after{content:"";position:absolute;left:12px;top:21px;width:20px;height:2px;background:var(--ink);transform:rotate(45deg)}
+.dlg-close::after{transform:rotate(-45deg)}
+
 /* review */
 .rev-lead{font-size:24px;font-weight:600;line-height:1.6;letter-spacing:.08em;margin-bottom:16px}
 .rev{display:grid;gap:22px;align-items:center}
@@ -341,7 +349,7 @@ a:focus-visible{outline:2px solid var(--blue-text);outline-offset:3px}
             <div><dt>対象</dt><dd>1回のご注文 <span class="nw">80,000円以上(税込)</span></dd></div>
             <div><dt>数量</dt><dd>先着100名様 <span class="nw">なくなり次第終了</span></dd></div>
           </dl>
-          <a class="btn" href="https://item.rakuten.co.jp/babuuu/name-sleeper-001/" target="_blank" rel="noopener">スリーパーを見る</a>
+          <a class="btn" id="openDetail" href="images/sleeper-detail.jpg">スリーパーを見る</a>
         </div>
       </div>
     </div>
@@ -482,6 +490,11 @@ a:focus-visible{outline:2px solid var(--blue-text);outline-offset:3px}
   </div>
 </footer>
 
+<dialog class="dlg" id="detail" aria-label="名入れスリーパーのプレゼント詳細">
+  <button class="dlg-close" id="closeDetail" type="button" aria-label="閉じる"></button>
+  <div class="dlg-scroll"><img src="images/sleeper-detail.jpg" alt="8万円以上ご購入のお客様限定 お名前入りスリーパーを先着100名様にプレゼント。全5色からランダムでお届け。お名入れできる文字はひらがな5文字、アルファベット10文字。お申し込みはメールでご返信ください。" width="430" height="2000" loading="lazy"></div>
+</dialog>
+
 <script>
 (function(){
   var PHASES=[
@@ -512,6 +525,20 @@ a:focus-visible{outline:2px solid var(--blue-text);outline-offset:3px}
     $('cdM').textContent=pad(Math.floor(s%3600/60));
   }
   tick();setInterval(tick,20000);
+
+  // スリーパーの詳細を開く
+  var dlg=$('detail'),openBtn=$('openDetail');
+  if(dlg&&dlg.showModal){
+    openBtn.addEventListener('click',function(e){
+      e.preventDefault();
+      dlg.showModal();
+      dlg.querySelector('.dlg-scroll').scrollTop=0;
+      document.documentElement.style.overflow='hidden';
+    });
+    dlg.addEventListener('close',function(){document.documentElement.style.overflow=''});
+    dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+    $('closeDetail').addEventListener('click',function(){dlg.close()});
+  }
 
   // スクロールで表示
   var els=document.querySelectorAll('.rv');
